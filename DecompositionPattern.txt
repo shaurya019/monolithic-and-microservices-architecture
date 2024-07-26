@@ -1,0 +1,18 @@
+Decomposition patterns in Microservices architecture refer to strategies for breaking down a monolithic application into smaller, manageable, and loosely coupled services.
+
+
+Decompose by Business Capability:
+
+Concept: Identify and define microservices based on business capabilities. Each microservice is responsible for a specific business function.
+Example: An eCommerce application could have microservices for user management, inventory, payment, and order processing.
+
+
+Decompose by Subdomain:
+
+Concept: Use Domain-Driven Design (DDD) to break down the application into subdomains. Each subdomain corresponds to a microservice.
+Example: In a banking application, subdomains might include accounts, loans, and customer service.
+
+
+
+
+

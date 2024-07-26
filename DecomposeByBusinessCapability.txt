@@ -1,0 +1,47 @@
+Decompose by Business Capability
+Concept: Identify and define microservices based on business capabilities. Each microservice is responsible for a specific business function.
+
+Example: eCommerce Application
+In an eCommerce application, the main business capabilities might include user management, product catalog, order processing, payment, and shipping. Based on these capabilities, the application can be decomposed into the following microservices:
+
+User Management Service
+
+Responsibilities: User registration, login, profile management, and authentication.
+Endpoints:
+POST /users/register
+POST /users/login
+GET /users/profile
+PUT /users/profile
+Product Catalog Service
+
+Responsibilities: Managing product listings, categories, search functionality, and inventory.
+Endpoints:
+GET /products
+GET /products/{id}
+POST /products
+PUT /products/{id}
+DELETE /products/{id}
+GET /categories
+Order Processing Service
+
+Responsibilities: Handling customer orders, order status updates, and order history.
+Endpoints:
+POST /orders
+GET /orders/{id}
+PUT /orders/{id}
+GET /orders/user/{userId}
+Payment Service
+
+Responsibilities: Processing payments, managing payment gateways, and handling refunds.
+Endpoints:
+POST /payments
+GET /payments/{orderId}
+POST /payments/refund
+Shipping Service
+
+Responsibilities: Managing shipping logistics, tracking shipments, and handling delivery notifications.
+Endpoints:
+POST /shipping
+GET /shipping/{orderId}
+PUT /shipping/{orderId}
+By decomposing the application into these microservices, each service focuses on a specific business capability, leading to more modular, scalable, and maintainable architecture.

@@ -1,0 +1,46 @@
+Decompose by Subdomain
+Concept: Use Domain-Driven Design (DDD) to break down the application into subdomains. Each subdomain corresponds to a microservice.
+
+Example: Banking Application
+In a banking application, the main subdomains might include accounts, loans, transactions, and customer service. Based on these subdomains, the application can be decomposed into the following microservices:
+
+Account Service
+
+Responsibilities: Managing customer accounts, account creation, updates, and closures.
+Endpoints:
+POST /accounts
+GET /accounts/{accountId}
+PUT /accounts/{accountId}
+DELETE /accounts/{accountId}
+Loan Service
+
+Responsibilities: Handling loan applications, loan approvals, and repayment schedules.
+Endpoints:
+POST /loans
+GET /loans/{loanId}
+PUT /loans/{loanId}
+GET /loans/customer/{customerId}
+Transaction Service
+
+Responsibilities: Managing financial transactions, transaction history, and account statements.
+Endpoints:
+POST /transactions
+GET /transactions/{transactionId}
+GET /transactions/account/{accountId}
+GET /transactions/customer/{customerId}
+Customer Service
+
+Responsibilities: Handling customer inquiries, support tickets, and customer relationship management.
+Endpoints:
+POST /customers
+GET /customers/{customerId}
+PUT /customers/{customerId}
+DELETE /customers/{customerId}
+POST /customers/support
+By decomposing the application into these microservices based on subdomains, each service encapsulates a distinct area of the business domain, promoting better domain modeling, reduced complexity, and improved separation of concerns.
+
+
+
+
+
+
