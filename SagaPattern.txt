@@ -1,0 +1,22 @@
+The Saga pattern is a design pattern for handling distributed transactions in microservices architecture. In a microservice-based system, a single business transaction might span multiple services. Each service has its own database, and ensuring data consistency across these services can be challenging. The Saga pattern provides a way to manage this by breaking the transaction into a series of smaller, isolated steps, each managed by a different service.
+
+Types of Sagas
+Choreography-based Sagas:
+
+In this approach, each service involved in the transaction performs its work and then publishes an event.
+Other services listen to these events and react accordingly.
+This pattern is decentralized, with no central coordinator.
+Orchestration-based Sagas:
+
+A central orchestrator manages the entire transaction.
+The orchestrator sends commands to the services involved.
+Each service performs its task and replies back to the orchestrator.
+How It Works
+Saga Steps:
+
+Each step in the Saga represents a single transaction performed by a service.
+A step is either a compensatable transaction (if it can be undone) or a pivot transaction (if it commits the final state).
+Compensating Transactions:
+
+If a step in the Saga fails, compensating transactions are invoked to undo the previous steps.
+This ensures eventual consistency.

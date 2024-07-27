@@ -1,0 +1,46 @@
+**IMP Strangler Pattern**
+Strangler Pattern - Refactor to microservices
+monolithic -> decomposition se pata chal gaya ki kitna ma divide karna ha
+monolithic to decomposition ka beech ma Strangler Pattern work karta ha
+
+
+The Strangler Pattern is a technique used in software development, particularly in the context of migrating monolithic applications to microservices architectures.
+
+The Strangler Pattern involves incrementally replacing parts of a legacy system with new microservices. This approach allows for gradual transformation without disrupting the entire system, enabling continuous delivery and minimizing risk.
+
+Steps in Implementing the Strangler Pattern
+Identify Components: Analyze the monolithic application to identify components or functionalities that can be isolated and migrated to microservices.
+
+Create New Services: Develop new microservices that replicate the functionality of the identified components. Ensure that these services adhere to modern development practices and architectural principles.
+
+Route Traffic: Use routing mechanisms (like an API Gateway or service mesh) to direct traffic from the legacy system to the new microservices. This step can involve techniques such as reverse proxies or feature toggles to manage traffic flow.
+
+Iterate and Expand: Gradually migrate more components, redirecting traffic to the new microservices and decommissioning parts of the monolithic application. Repeat this process until the entire legacy system is replaced or significantly modernized.
+
+Benefits of the Strangler Pattern
+Risk Mitigation: By gradually migrating to microservices, the risk associated with a full system overhaul is minimized.
+Continuous Delivery: The application remains operational throughout the migration process, supporting continuous delivery practices.
+Improved Scalability: Incrementally developed microservices can be designed to scale independently, improving the overall scalability of the system.
+Modernization: The pattern allows for the introduction of modern technologies and practices in a phased manner, without disrupting existing functionality.
+
+
+
+Steps to Apply the Strangler Pattern:
+Identify a Candidate for Migration:
+
+Choose a functionality that can be isolated and has clear boundaries. For example, start with the "Product Catalog" service.
+Create a Microservice for the New Functionality:
+
+Develop a new microservice to handle the "Product Catalog" functionality. This new service will be responsible for all operations related to product management.
+Create a Proxy Layer:
+
+Introduce a proxy layer (API Gateway) between the clients and the monolithic application. This proxy will route requests to either the monolith or the new microservice based on the functionality.
+Route Traffic to the New Microservice:
+
+Update the proxy configuration to route all requests related to the "Product Catalog" to the new microservice. Other requests continue to be handled by the monolith.
+Gradually Migrate Other Functionalities:
+
+Repeat the process for other functionalities, like "User Management," "Order Processing," and "Payment Processing." For each functionality, create a new microservice, update the proxy layer, and route the appropriate requests.
+Retire the Monolith:
+
+Once all functionalities have been migrated to microservices, the monolithic application can be retired.
